@@ -1,0 +1,46 @@
+[SAIDAS]
+1_MethodInclusao       = MILLENIUM.MOVIMENTACAO.EXECUTA
+2_MethodAlteracao      = MILLENIUM.MOVIMENTACAO.EXECUTA
+2_CampoDeAlteracao     = COD_OPERACAO, TIPO_OPERACAO
+3_MethodConsulta       = BMSYNC.SAIDAS.CONSULTASEEXISTE
+3_CampoDeBusca         = GUID
+--RedirecionamentosDeCampos = (FILIAL|COD_FILIAL)
+ForeignKeys            = FORNECEDOR, CONDICOES_PGTO, FILIAL
+
+[DOCUMENTOS]
+1_MethodInclusao       = BMSYNC.DOCUMENTOS.INCLUI
+2_MethodAlteracao      = BMSYNC.DOCUMENTOS.ALTERA
+2_CampoDeAlteracao     = DOCUMENTO
+3_MethodConsulta       = BMSYNC.DOCUMENTOS.BUSCA
+3_CampoDeBusca         = GUID
+ForeignKeys            = 
+
+[PRODUTOS]
+1_MethodInclusao       = MILLENIUM.PRODUTOSAC.INCLUI
+2_MethodAlteracao      = MILLENIUM.PRODUTOSAC.ALTERA
+2_CampoDeAlteracao     = PRODUTO
+3_MethodConsulta       = BMSYNC.PRODUTOS.CONSULTASEEXISTE
+3_CampoDeBusca         = COD_PRODUTO
+ForeignKeys            = 
+
+[PRECOS]
+1_MethodInclusao       = MILLENIUM.PRECOS.ALTERA
+
+[MAPA_ECF]
+1_MethodInclusao       = BMSYNC.MAPA_ECF.INCLUI
+
+[ENTRADAS]
+1_MethodInclusao       = MILLENIUM.MOVIMENTACAO.EXECUTA
+2_MethodAlteracao      = MILLENIUM.MOVIMENTACAO.EXECUTA
+2_CampoDeAlteracao     = COD_OPERACAO, TIPO_OPERACAO
+3_MethodConsulta       = BMSYNC.ENTRADAS.CONSULTASEEXISTE
+3_CampoDeBusca         = GUID
+ForeignKeys            = FORNECEDOR, CONDICOES_PGTO, TABELA, FILIAL
+
+[CLIENTES]
+1_MethodInclusao       = MILLENIUM.CLIENTES.INCLUIR
+2_MethodAlteracao      = MILLENIUM.CLIENTES.ALTERAR
+2_CampoDeAlteracao     = CLIENTE, GERADORES.GERADOR
+3_MethodConsulta       = BMSYNC.CLIENTES.CONSULTASEEXISTE
+3_CampoDeBusca         = COD_CLIENTE
+ForeignKeys            = 
